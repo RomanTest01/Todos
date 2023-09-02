@@ -8,15 +8,6 @@ public class Task {
     }
 
 
-    public int getId() {
-        return id;
-    }
-
-    public boolean matches(String query) {
-        return false;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,5 +19,14 @@ public class Task {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+
+    public boolean matches(String query) {
+        return false;
+    }
+
+    public int getId() {
+        return id;
     }
 }

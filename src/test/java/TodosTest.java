@@ -32,15 +32,14 @@ public class TodosTest {
     }
 
     @Test
-    public void seeID (){
-        Task task= new Task(5);
+    public void seeID() {
+        Task task = new Task(5);
 
         int expected = 5;
         int actual = task.getId();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
-
 
 
     @Test
@@ -69,8 +68,9 @@ public class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void searchTwoResults(){
+    public void searchTwoResults() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить по телефону НетоБанка");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -96,7 +96,7 @@ public class TodosTest {
     }
 
     @Test
-    public void searchZeroResults(){
+    public void searchZeroResults() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить по телефону НетоБанка");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};

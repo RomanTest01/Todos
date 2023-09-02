@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+
 public class TasksTest {
     @Test
     public void matchesSimpleTaskTest() {
@@ -63,8 +65,9 @@ public class TasksTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void matchesInTopicMeeting(){
+    public void matchesInTopicMeeting() {
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -95,4 +98,39 @@ public class TasksTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void seeTitle() {
+        SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
+
+        String title = simpleTask.getTitle();
+
+        System.out.println(title);
+
+    }
+
+    @Test
+    public void seeSubtasks() {
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        Epic epic = new Epic(55, subtasks);
+
+
+        System.out.println(epic.getSubtasks());
+
+    }
+
+    @Test
+    public void seeMeeting() {
+        Meeting meeting = new Meeting(
+                555,
+                "Выкатка 3й версии приложения",
+                "Приложение НетоБанка",
+                "Во вторник после обеда"
+        );
+
+        System.out.println(meeting.getTopic());
+        System.out.println(meeting.getProject());
+        System.out.println(meeting.getStart());
+
+    }
 }
